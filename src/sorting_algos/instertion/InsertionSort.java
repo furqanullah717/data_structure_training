@@ -10,6 +10,7 @@ public class InsertionSort implements SortingAlgo {
 
             int newElement = integers[firstUnsortedIndex];
             int index;
+            //if index is greater than 0 and the element on left is greater, then run the loop
             for (index = firstUnsortedIndex; index > 0 && integers[index-1] > newElement; index--) {
                 integers[index] = integers[index - 1];
             }
