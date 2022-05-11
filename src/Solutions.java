@@ -1,4 +1,4 @@
-import sorting_algos.BubbleSort;
+import sorting_algos.bubble.BubbleSort;
 import sorting_algos.SortingAlgo;
 
 import java.util.Arrays;
