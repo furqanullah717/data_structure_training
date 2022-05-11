@@ -1,4 +1,6 @@
-package sorting_algos;
+package sorting_algos.bubble;
+
+import sorting_algos.SortingAlgo;
 
 public class BubbleSort implements SortingAlgo {
 

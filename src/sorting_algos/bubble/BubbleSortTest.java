@@ -1,8 +1,9 @@
-package sorting_algos;
+package sorting_algos.bubble;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import sorting_algos.SortingAlgo;
 
 class BubbleSortTest {
 
