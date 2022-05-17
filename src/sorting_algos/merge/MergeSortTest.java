@@ -1,7 +1,6 @@
 package sorting_algos.merge;
 
 import base.BaseTestClass;
-import org.junit.jupiter.api.Test;
 
 class MergeSortTest extends BaseTestClass {
 
