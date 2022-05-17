@@ -5,13 +5,13 @@ import base.SortingAlgo;
 public class MergeSort implements SortingAlgo {
 
     @Override
-    public Integer[] sort(Integer[] integers) {
+    public Integer[] sort(Integer[] integers, boolean descending) {
 
-        mergeSort(integers);
+        mergeSort(integers, descending);
         return integers;
     }
 
-    public void mergeSort(Integer[] items) {
+    public void mergeSort(Integer[] items, boolean descending) {
         if (items.length < 2) {
             return;
         }
@@ -25,28 +25,40 @@ public class MergeSort implements SortingAlgo {
         //fil data inside the temp arrays
         System.arraycopy(items, 0, leftSide, 0, mid);
         if (items.length - mid >= 0) System.arraycopy(items, mid, rightSide, mid - mid, items.length - mid);
-
         //divide left side
-        mergeSort(leftSide);
+        mergeSort(leftSide, descending);
         //divide right side
-        mergeSort(rightSide);
+        mergeSort(rightSide, descending);
         //merge
-        merge(items, leftSide, rightSide);
+        merge(items, leftSide, rightSide, descending);
 
     }
 
-    void merge(Integer[] items, Integer[] left, Integer[] right) {
+    void merge(Integer[] items, Integer[] left, Integer[] right, boolean descending) {
         int i = 0;
         int j = 0;
         int tempIndex = 0;
-        while (i < left.length && j < right.length) {
-            items[tempIndex++] = left[i] <= right[j] ? left[i++] : right[j++];
+        while (descending ? j < left.length && i < right.length : i < left.length && j < right.length) {
+
+            if (descending) {
+                items[tempIndex++] = left[j] >= right[i] ? left[j++] : right[i++];
+            } else {
+                items[tempIndex++] = left[i] <= right[j] ? left[i++] : right[j++];
+            }
+
         }
-        while (i < left.length) {
-            items[tempIndex++] = left[i++];
+        if(descending) {
+            assignRemaining(items, left, tempIndex, j);
+            assignRemaining(items, right, tempIndex, i);
+        }else {
+            assignRemaining(items, left, tempIndex, i);
+            assignRemaining(items, right, tempIndex, j);
         }
-        while (j < right.length) {
-            items[tempIndex++] = right[j++];
+    }
+
+    private void assignRemaining(Integer[] integers, Integer[] tempArray, Integer tempIndex, Integer arrIndex) {
+        while (arrIndex < tempArray.length) {
+            integers[tempIndex++] = tempArray[arrIndex++];
         }
     }
 }
