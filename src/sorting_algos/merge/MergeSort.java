@@ -1,6 +1,6 @@
 package sorting_algos.merge;
 
-import sorting_algos.SortingAlgo;
+import base.SortingAlgo;
 
 public class MergeSort implements SortingAlgo {
 
@@ -23,12 +23,8 @@ public class MergeSort implements SortingAlgo {
         Integer[] rightSide = new Integer[items.length - mid];
 
         //fil data inside the temp arrays
-        for (int i = 0; i < mid; i++) {
-            leftSide[i] = items[i];
-        }
-        for (int i = mid; i < items.length; i++) {
-            rightSide[i - mid] = items[i];
-        }
+        System.arraycopy(items, 0, leftSide, 0, mid);
+        if (items.length - mid >= 0) System.arraycopy(items, mid, rightSide, mid - mid, items.length - mid);
 
         //divide left side
         mergeSort(leftSide);

@@ -1,6 +1,6 @@
 package sorting_algos.selection;
 
-import sorting_algos.SortingAlgo;
+import base.SortingAlgo;
 
 public class SelectionSort implements SortingAlgo {
 

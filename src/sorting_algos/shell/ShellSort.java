@@ -1,6 +1,6 @@
 package sorting_algos.shell;
 
-import sorting_algos.SortingAlgo;
+import base.SortingAlgo;
 
 public class ShellSort implements SortingAlgo {
     @Override

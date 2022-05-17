@@ -1,4 +1,4 @@
-package sorting_algos;
+package base;
 
 public interface SortingAlgo {
     Integer[] sort(Integer[] integers);

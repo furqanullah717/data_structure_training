@@ -1,6 +1,6 @@
 package sorting_algos.instertion;
 
-import sorting_algos.SortingAlgo;
+import base.SortingAlgo;
 
 public class InsertionSort implements SortingAlgo {
     @Override
