@@ -4,7 +4,7 @@ import base.SortingAlgo;
 
 public class QuickSort implements SortingAlgo {
     @Override
-    public Integer[] sort(Integer[] integers) {
+    public Integer[] sort(Integer[] integers,boolean descending) {
         quickSort(integers, 0, integers.length);
         return integers;
     }

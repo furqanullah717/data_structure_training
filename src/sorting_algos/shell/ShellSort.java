@@ -4,7 +4,7 @@ import base.SortingAlgo;
 
 public class ShellSort implements SortingAlgo {
     @Override
-    public Integer[] sort(Integer[] integers) {
+    public Integer[] sort(Integer[] integers,boolean descending) {
 
         for (int gap = integers.length / 2; gap > 0; gap  /= 2) {
             for (int index = gap; index < integers.length; index++) {

@@ -14,7 +14,7 @@ class QuickSortTest extends BaseTestClass {
     @Test
     void sort2() {
         Integer[] integers = new Integer[]{3, -1, 7, -20, 2, 55};
-        Integer[] res = testClass.sort(integers);
+        Integer[] res = testClass.sort(integers,false);
         Assertions.assertArrayEquals(new Integer[]{-20, -1, 2, 3, 7, 55}, res);
     }
 }

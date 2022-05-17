@@ -4,7 +4,7 @@ import base.SortingAlgo;
 
 public class InsertionSort implements SortingAlgo {
     @Override
-    public Integer[] sort(Integer[] integers) {
+    public Integer[] sort(Integer[] integers,boolean descending) {
 
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < integers.length; firstUnsortedIndex++) {
 

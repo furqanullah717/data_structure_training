@@ -5,7 +5,7 @@ import base.SortingAlgo;
 public class SelectionSort implements SortingAlgo {
 
     @Override
-    public Integer[] sort(Integer[] integers) {
+    public Integer[] sort(Integer[] integers,boolean descending) {
 
         for (int lastUnsortedIndex = integers.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             int index = 0;
